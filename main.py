@@ -25,7 +25,7 @@ def send_link(email, token):
     msg['From'] = 'magiclinksender@email.com'
     msg['To'] = email
     msg['Subject'] = 'Magic Link'
-    message = 'Your magic link is: /login?token=' + token
+    message = 'Your magic link is: http://flask-magiclink.herokuapp.com/login?token=%s' % token
     msg.attach(MIMEText(message))
     mailserver = smtplib.SMTP('localhost', port_number)
     mailserver.login("magiclinksender@email.com", "password")
