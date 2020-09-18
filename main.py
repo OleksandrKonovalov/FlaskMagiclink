@@ -44,7 +44,7 @@ def generate_tokens():
 
 @app.route('/')
 def home():
-    return "Check your email, please."
+    return "http://flask-magiclink.herokuapp.com/login?token=%s" % list(tokens.keys())[0]
 
 
 @app.route('/login')
